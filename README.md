@@ -12,9 +12,6 @@ This is my personal portfolio website built using **React.js**, **Tailwind CSS**
 - Animated typing effect using Typed.js
 - Contact section with WhatsApp, Instagram, and email
 
-## 🔗 Live Demo
-👉# 🌐 Suhani's Developer Portfolio
-
 ## 🚧 Deployment
 This project is currently under development and will be deployed soon.
 
