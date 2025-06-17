@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suhani-Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: rgb(73, 9, 56);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        height: 70px;
+        background: linear-gradient(to right, #1f1147, #33135c);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav .left {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #facc15; /* Yellow-ish for your name */
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav ul li {
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: #e0e0e0;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding-bottom: 5px;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 0%;
+        background: #facc15;
+        transition: width 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: #facc15;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .left {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      section {
+        padding: 100px 80px;
+      }
+      .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 80vh;
+      }
+      .firstSection > div {
+        width: 40%;
+      }
+      .rightSection img {
+        width: 100%;
+      }
+      .leftSection {
+        font-size: 1.9rem;
+      }
+      .leftSection .buttons {
+        padding: 50px 0;
+      }
+      .leftSection .btn {
+        padding: 12px;
+        background: #1e2167;
+        color: white;
+        border: 2px solid white;
+        border-radius: 6px;
+        font-size: 20px;
+        cursor: pointer;
+        margin-right: 15px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      .leftSection .btn:hover {
+        background: #35ec59;
+        color: #000;
+        transform: scale(1.1);
+      }
+      .purple {
+        color: rgb(149, 76, 217);
+      }
+      #element {
+        color: rgb(149, 76, 217);
+      }
+      .section-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #9c97f1;
+        display: inline-block;
+      }
+      footer {
+        background-color: #0e0e1a;
+        color: #aaa;
+        font-size: 0.9rem;
+        padding: 20px;
+        border-top: 1px solid #333;
+      }
+
+      .contactSection {
+        background-color: #1e1e2f;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      .contactSection h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #f3b600;
+      }
+
+      .contactList {
+        list-style: none;
+        padding: 0;
+        font-size: 1.1rem;
+        line-height: 2.2;
+      }
+
+      .contactList a {
+        color: #9dc2f7;
+        text-decoration: none;
+      }
+
+      .contactList a:hover {
+        text-decoration: underline;
+      }
+      .skills-section {
+        background: linear-gradient(135deg, #190033, #2d0066);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .skills-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #f3b600;
+      }
+
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+      }
+
+      .skill-card {
+        background: #1e1e2f;
+        border-radius: 15px;
+        padding: 20px;
+        width: 120px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: scale(1.1);
+      }
+
+      .skill-card img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .skill-card p {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Suhani's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Awards And Leadership</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="firstSection">
+      <div class="leftSection">
+        Hi, my name is <span class="purple">Suhani</span>
+        <div>And I am Into</div>
+        <span id="element"></span>
+        <div class="buttons">
+          <a
+            href="https://www.canva.com/design/DAGo56aVdzk/zjiOIDKkonPoL9XvaWf7dQ/view"
+            class="btn"
+            target="_blank"
+          >
+            View Resume
+          </a>
+          <a
+            href="https://github.com/suhanisharma98"
+            class="btn"
+            target="_blank"
+          >
+            Visit GitHub
+          </a>
+        </div>
+      </div>
+      <div class="rightSection">
+        <img src="pg.png.png" alt="Profile Image" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white text-gray-900">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">🙋‍♀ About Me</h2>
+        <div
+          class="text-lg leading-8 max-w-3xl mx-auto bg-gradient-to-br from-purple-100 to-indigo-100 p-6 rounded-lg shadow-md"
+        >
+          <p class="mb-4">
+            Hey there! I'm
+            <span class="font-semibold text-purple-700">Suhani Sharma</span>, a
+            3rd-year B.Tech Computer Engineering student at BVDUCOEP, Pune. I'm
+            passionate about web development and specialize in the
+            <span class="font-medium text-indigo-700">MERN stack</span>.
+          </p>
+          <p class="mb-4">
+            I love building modern websites using <strong>React.js</strong>, and
+            I enjoy solving Data Structures and Algorithms (DSA) problems on
+            platforms like LeetCode.
+          </p>
+          <p>
+            With experience coding since Class 10, I also know how to build
+            responsive and user-friendly websites from scratch using
+            <strong>HTML</strong>, <strong>CSS</strong>, and
+            <strong>JavaScript</strong>. I'm always curious, always building,
+            and always learning!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- Tailwind CSS CDN link in <head> -->
+    <section id="skills" class="skills-section">
+      <h2>🚀 Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+          />
+          <p>MongoDB</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+          />
+          <p>Express.js</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          />
+          <p>React.js</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          />
+          <p>Node.js</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          />
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+          />
+          <p>HTML5</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+          />
+          <p>CSS3</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+          />
+          <p>Tailwind CSS</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+          />
+          <p>Git</p>
+        </div>
+        <div class="skill-card">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          />
+          <p>GitHub</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-12 bg-gray-100 text-gray-800">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-10">🎓 Education</h2>
+        <div class="space-y-8">
+          <!-- BTech -->
+          <div
+            class="transition transform hover:scale-[1.02] hover:shadow-lg bg-white p-6 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300"
+          >
+            <div>
+              <p class="text-xl font-bold text-indigo-700">📘 2023 - 2027</p>
+              <p class="font-medium">
+                Bharati Vidyapeeth (Deemed to be University), COEP, Pune
+              </p>
+            </div>
+            <div>
+              <p class="font-semibold">
+                Currently in Semester 5, B.Tech 2<sup>nd</sup> Year Computer
+                Engineering
+              </p>
+              <p class="text-sm mt-1">
+                Completed First Year with CGPA:
+                <span class="font-bold text-green-600">9.56</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 12th -->
+          <div
+            class="transition transform hover:scale-[1.02] hover:shadow-lg bg-white p-6 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4 border-b border-gray-300"
+          >
+            <div>
+              <p class="text-xl font-bold text-indigo-700">🏫 2022 - 2023</p>
+              <p class="font-medium">Oriental Academy, Jammu</p>
+            </div>
+            <div>
+              <p class="font-semibold">
+                Higher Secondary School Certificate (HSSC)
+              </p>
+              <p class="text-sm mt-1">
+                Grade: <strong>457/500</strong> | CGPA:
+                <span class="font-bold text-green-600">9.621</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- 10th -->
+          <div
+            class="transition transform hover:scale-[1.02] hover:shadow-lg bg-white p-6 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <div>
+              <p class="text-xl font-bold text-indigo-700">🏫 2020 - 2021</p>
+              <p class="font-medium">
+                St. Joseph’s Convent High School, Nagrota Jammu
+              </p>
+            </div>
+            <div>
+              <p class="font-semibold">Secondary School Certificate (SSC)</p>
+              <p class="text-sm mt-1">
+                Grade: <strong>446/500</strong> | CGPA:
+                <span class="font-bold text-green-600">9.60</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-12 bg-white text-gray-900">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-4">💼 Projects</h2>
+        <p class="text-lg text-gray-600 mb-10">
+          Here are some of the projects I’ve worked on (more updates coming
+          soon!).
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Placeholder Project Card -->
+          <!-- NRU Page Replacement Project -->
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+          >
+            <h3 class="text-2xl font-semibold mb-3">📄 NRU Page Replacement</h3>
+            <img
+              src="https://raw.githubusercontent.com/suhanisharma98/nru-page-replacement/main/nru_demo.png"
+              alt="NRU Simulation Screenshot"
+              class="rounded-md mb-4 w-full h-auto"
+            />
+            <p class="text-gray-700 mb-3">
+              A simulation of the Not Recently Used (NRU) page replacement
+              algorithm using HTML, CSS, and JavaScript. It demonstrates how NRU
+              works in virtual memory management with visual interactions.
+            </p>
+            <a
+              href="https://github.com/suhanisharma98/nru-page-replacement"
+              target="_blank"
+              class="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition duration-200"
+            >
+              🔗 View on GitHub
+            </a>
+          </div>
+
+          <!-- Add more placeholder cards if needed -->
+          <div
+            class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300"
+          >
+            <h3 class="text-2xl font-semibold mb-2">🛠 Updating Soon</h3>
+            <p class="text-gray-700">
+              I’m currently working on exciting projects using the MERN stack.
+              This section will be updated shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="py-16 bg-gradient-to-br from-purple-900 to-indigo-900 text-white"
+    >
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-10 text-yellow-400">
+          🏆 Awards & Leadership
+        </h2>
+
+        <div class="space-y-8">
+          <!-- Head Girl -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300"
+          >
+            <h3 class="text-2xl font-semibold text-yellow-300">
+              👩‍🎓 Head Girl, Senior Secondary (10+2)
+            </h3>
+            <p class="mt-2 text-lg text-gray-200">
+              Demonstrated leadership, discipline, and public speaking skills
+              while representing the student body.
+            </p>
+          </div>
+
+          <!-- Chess Champion -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300"
+          >
+            <h3 class="text-2xl font-semibold text-yellow-300">
+              ♟ State-Level Chess Champion
+            </h3>
+            <p class="mt-2 text-lg text-gray-200">
+              Secured 1st place at the state chess championship, showcasing
+              strategic thinking and focus.
+            </p>
+          </div>
+
+          <!-- Karate -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300"
+          >
+            <h3 class="text-2xl font-semibold text-yellow-300">
+              🥋 Yellow Belt in Karate
+            </h3>
+            <p class="mt-2 text-lg text-gray-200">
+              Achieved yellow belt rank, reflecting commitment to martial arts,
+              physical discipline, and self-defense training.
+            </p>
+          </div>
+
+          <!-- Event Host -->
+          <div
+            class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg hover:scale-[1.02] transition-transform duration-300"
+          >
+            <h3 class="text-2xl font-semibold text-yellow-300">
+              🎤 Event Host, Annual School Function
+            </h3>
+            <p class="mt-2 text-lg text-gray-200">
+              Anchored major events, boosting confidence, stage presence, and
+              communication abilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contactSection">
+      <h2>Contact Me</h2>
+      <ul class="contactList">
+        <li>
+          <strong>📞 Mobile:</strong>
+          <a href="tel:+917780828136">+91 7780828136</a>
+        </li>
+        <li>
+          <strong>💬 WhatsApp:</strong>
+          <a href="https://wa.me/917780828136" target="_blank"
+            >Chat on WhatsApp</a
+          >
+        </li>
+        <li>
+          <strong>📸 Instagram:</strong>
+          <a href="https://instagram.com/suhanisharma98_" target="blank"
+            >@suhanisharma98</a
+          >
+        </li>
+        <li>
+          <strong>📧 Email:</strong>
+          <a href="mailto:suhanibanathia78@gmail.com"
+            >suhanibanathia78@gmail.com</a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>Copyright &#169; Suhani's Portfolio | All Rights Reserved</footer>
+
+    <!-- Typed.js Animation -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Front End Development",
+          "MERN Stack Development ",
+          "Machine Learning",
+          "Artificial Intelligence",
+        ],
+        typeSpeed: 50,
+        backSpeed: 25,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
